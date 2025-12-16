@@ -2,7 +2,7 @@
 
 > AI-powered code generation for Appian developers using VS Code or Cursor IDE
 
-**Version:** 1.4.0
+**Version:** 1.5.0
 
 ## Features
 
@@ -86,8 +86,8 @@ This extension is distributed as source code. You need to build it before instal
 
 1. **Press `Cmd+Shift+A`** (Mac) or `Ctrl+Shift+A` (Windows)
 2. **Describe what you want**: "Create a dropdown field labeled Status with options Active, Inactive, Pending"
-3. **Choose**: "Copy to clipboard"
-4. **Press `Cmd+K`** (Cursor inline editor) and paste
+3. **Choose**: "Send to chat" or "Generate inline"
+4. **Press `Cmd+V`** (for chat) or **Enter** (for inline)
 5. **Get production-ready Appian code!**
 
 ### Detailed Usage
@@ -98,6 +98,8 @@ This extension is distributed as source code. You need to build it before instal
 2. Type: `Appian: Generate Code`
 3. Enter your description
 4. Choose how to use the prompt:
+   - **Send to chat** → Auto-opens chat with prompt ready (just press `Cmd+V`)
+   - **Generate inline** → Auto-triggers `Cmd+K` (just press Enter)
    - **Copy to clipboard** → Paste into Cursor chat (`Cmd+L`) or inline editor (`Cmd+K`)
    - **Open in new file** → Review and edit before using
    - **Insert at cursor** → Add prompt directly to your document
@@ -281,7 +283,13 @@ The extension automatically activates for:
 
 ## Version History
 
-### 1.4.0 (Current)
+### 1.5.0 (Current)
+- 🚀 NEW: "Send to chat" option - Auto-opens chat with prompt ready to paste
+- ✨ NEW: "Generate inline" option - Auto-triggers Cmd+K for instant generation
+- 📈 5 workflow options now available (up from 3)
+- 🎯 Streamlined user experience with automated workflows
+
+### 1.4.0
 - ✨ Added context-aware best practices from 9 Appian documentation pages
 - 🎯 Dynamic filtering based on request keywords
 - 📝 Enhanced system instructions with explicit syntax rules

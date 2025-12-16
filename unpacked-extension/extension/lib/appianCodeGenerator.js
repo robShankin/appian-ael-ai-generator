@@ -252,6 +252,16 @@ class AppianCodeGenerator {
     const choice = await vscode.window.showQuickPick(
       [
         {
+          label: '$(comment-discussion) Send to chat',
+          description: 'Opens chat with prompt ready to paste (Cmd+V)',
+          action: 'sendToChat',
+        },
+        {
+          label: '$(sparkle) Generate inline',
+          description: 'Opens prompt and triggers Cmd+K automatically',
+          action: 'generateInline',
+        },
+        {
           label: '$(copy) Copy prompt to clipboard',
           description: 'Paste into Cursor chat to generate code',
           action: 'copy',
@@ -277,6 +287,38 @@ class AppianCodeGenerator {
     }
 
     switch (choice.action) {
+      case 'sendToChat':
+        // Copy to clipboard and open chat automatically
+        await vscode.env.clipboard.writeText(prompt);
+        await vscode.commands.executeCommand('workbench.action.chat.open');
+        vscode.window.showInformationMessage(
+          '✓ Chat opened! Press Cmd+V (Mac) or Ctrl+V (Windows) to paste the prompt.'
+        );
+        break;
+
+      case 'generateInline':
+        // Open in new file and trigger inline chat automatically
+        const inlineDoc = await vscode.workspace.openTextDocument({
+          content: prompt,
+          language: 'markdown',
+        });
+        const inlineEditor = await vscode.window.showTextDocument(inlineDoc);
+
+        // Select all text in the document
+        const fullRange = new vscode.Range(
+          inlineDoc.positionAt(0),
+          inlineDoc.positionAt(inlineDoc.getText().length)
+        );
+        inlineEditor.selection = new vscode.Selection(fullRange.start, fullRange.end);
+
+        // Trigger inline chat (Cmd+K / Ctrl+K)
+        await vscode.commands.executeCommand('inlineChat.start');
+
+        vscode.window.showInformationMessage(
+          '✓ Inline chat activated! Press Enter to generate code in the document.'
+        );
+        break;
+
       case 'copy':
         await vscode.env.clipboard.writeText(prompt);
         const selected = await vscode.window.showInformationMessage(

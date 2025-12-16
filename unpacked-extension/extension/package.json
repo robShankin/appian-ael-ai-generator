@@ -3,7 +3,7 @@
     "displayName": "Appian Expression Language AI Code Generator",
     "description": "AI-powered Appian Expression Language code generation for Cursor",
     "publisher": "Appian Customer Success",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "icon": "icon.png",
     "engines": {
         "vscode": "^1.80.0"
