@@ -1,0 +1,198 @@
+{
+  "coreRules": [
+    {
+      "rule": "Arrays in Appian are one-dimensional and use braces {} with comma separation. Array indexing starts at 1.",
+      "example": "{2, 3, 9, 1} or array[1] returns first element",
+      "priority": "critical",
+      "keywords": ["array", "list", "index"]
+    },
+    {
+      "rule": "Use ampersand (&) for text concatenation, not plus (+) operator.",
+      "example": "\"Dear \" & pv!title & \" \" & pv!name",
+      "priority": "critical",
+      "keywords": ["text", "string", "concatenate", "join"]
+    },
+    {
+      "rule": "Comments must use block syntax /* */ - line comments are not supported.",
+      "example": "/* This is a valid comment */",
+      "priority": "high",
+      "keywords": ["comment"]
+    },
+    {
+      "rule": "No built-in Appian functions have side effects. Expression evaluation order and frequency are not guaranteed.",
+      "example": "Functions with identical parameters may be cached and evaluated only once",
+      "priority": "critical",
+      "keywords": ["evaluation", "side-effect", "cache"]
+    },
+    {
+      "rule": "Variables use domain prefixes (pv!, ri!, local!, etc.). Variable names are case-insensitive.",
+      "example": "pv!ticketId, ri!input, local!result",
+      "priority": "high",
+      "keywords": ["variable", "domain", "prefix"]
+    }
+  ],
+  "performance": [
+    {
+      "rule": "Always page and filter query results. Never store unbounded data in local variables.",
+      "example": "Use a!pagingInfo() with a!queryEntity() or apply filters to limit results",
+      "priority": "critical",
+      "keywords": ["query", "data", "filter", "pagination", "paging"]
+    },
+    {
+      "rule": "Limit looping iterations to a maximum of 500 items. Avoid looping over large arrays.",
+      "example": "Before using a!forEach(), verify you need a loop and that the array has ≤500 items",
+      "priority": "critical",
+      "keywords": ["loop", "foreach", "apply", "iteration", "array"]
+    },
+    {
+      "rule": "Limit loop nesting to a maximum of 2 levels to avoid memory issues.",
+      "example": "Nested a!forEach() should be at most 2 levels deep",
+      "priority": "high",
+      "keywords": ["loop", "nested", "foreach"]
+    },
+    {
+      "rule": "Independent queries evaluate in parallel when resources permit. Optimize the slowest parallel operation for best results.",
+      "example": "Improving a 100ms query won't help if it runs parallel to a 400ms query",
+      "priority": "medium",
+      "keywords": ["query", "parallel", "performance", "optimization"]
+    },
+    {
+      "rule": "Avoid dynamically generating large numbers of interface components. Always page or filter data first.",
+      "example": "Don't create components in a loop over an unbounded dataset",
+      "priority": "high",
+      "keywords": ["interface", "component", "ui", "dynamic"]
+    },
+    {
+      "rule": "Save reusable expressions as expression rules for centralized, maintainable logic.",
+      "example": "Create a rule for calculations used in multiple places",
+      "priority": "medium",
+      "keywords": ["rule", "reusable", "expression"]
+    },
+    {
+      "rule": "Define constants for repeated literal values to improve maintainability.",
+      "example": "Store status codes or configuration values as constants",
+      "priority": "medium",
+      "keywords": ["constant", "literal", "value"]
+    }
+  ],
+  "nullHandling": [
+    {
+      "rule": "Null represents unknown/unpopulated data, distinct from empty strings or placeholder text like 'N/A'.",
+      "example": "A missing email is null; storing 'unknown' makes it populated",
+      "priority": "critical",
+      "keywords": ["null", "empty", "missing"]
+    },
+    {
+      "rule": "Use a!defaultValue() to provide fallback values when data might be null.",
+      "example": "a!defaultValue(ri!userEmail, \"No email provided\")",
+      "priority": "high",
+      "keywords": ["null", "default", "fallback", "missing"]
+    },
+    {
+      "rule": "Use a!isNullOrEmpty() to detect problematic nulls before they cause errors.",
+      "example": "if(a!isNullOrEmpty(local!data), \"No data\", processData(local!data))",
+      "priority": "high",
+      "keywords": ["null", "empty", "check", "validation"]
+    },
+    {
+      "rule": "Use a!isNotNullOrEmpty() to validate data presence before operations.",
+      "example": "if(a!isNotNullOrEmpty(ri!input), processInput(ri!input), {})",
+      "priority": "high",
+      "keywords": ["null", "empty", "validation", "check"]
+    },
+    {
+      "rule": "Anticipate nulls in query filters, dropdown components, API responses, and type casting operations.",
+      "example": "Use applyWhen conditions in filters to handle potential nulls",
+      "priority": "high",
+      "keywords": ["null", "query", "filter", "api", "cast"]
+    }
+  ],
+  "localVariables": [
+    {
+      "rule": "Use a!localVariables() to store temporary calculated values or user input that doesn't need persistence.",
+      "example": "a!localVariables(\n  local!total: sum(ri!items.price),\n  a!textField(value: local!total)\n)",
+      "priority": "high",
+      "keywords": ["local", "variable", "a!localVariables", "temporary"]
+    },
+    {
+      "rule": "Local variables automatically refresh when their dependencies change. Disable with refreshOnReferencedVarChange: false for snapshots.",
+      "example": "a!refreshVariable(value: ri!originalText, refreshOnReferencedVarChange: false)",
+      "priority": "high",
+      "keywords": ["local", "variable", "refresh", "dependency", "snapshot"]
+    },
+    {
+      "rule": "Local variables exist only within their defining function. Pass them as rule inputs to use in called rules.",
+      "example": "Cannot directly access parent's local! variables from called rules",
+      "priority": "high",
+      "keywords": ["local", "variable", "scope", "rule"]
+    },
+    {
+      "rule": "Never place interface components as local variable values - this causes unpredictable behavior.",
+      "example": "Don't do: local!myField: a!textField(...) - instead, define variables for data only",
+      "priority": "critical",
+      "keywords": ["local", "variable", "component", "interface"]
+    },
+    {
+      "rule": "Avoid duplicate variable names across nested a!localVariables() scopes to prevent confusion.",
+      "example": "If parent has local!name, don't reuse local!name in nested scope",
+      "priority": "medium",
+      "keywords": ["local", "variable", "nested", "scope", "duplicate"]
+    },
+    {
+      "rule": "Define local variables early in interfaces if multiple sections need them.",
+      "example": "Place a!localVariables() at interface root rather than repeating calculations",
+      "priority": "medium",
+      "keywords": ["local", "variable", "interface", "organization"]
+    },
+    {
+      "rule": "Use a!refreshVariable() with refreshAlways: true for save operations and smart services to ensure proper re-evaluation.",
+      "example": "a!refreshVariable(value: rule!saveData(), refreshAlways: true)",
+      "priority": "medium",
+      "keywords": ["local", "variable", "refresh", "save", "smart service"]
+    }
+  ],
+  "advanced": [
+    {
+      "rule": "Nested arrays automatically flatten to one dimension in Appian.",
+      "example": "{{1,2},{3,4}} becomes {1,2,3,4}",
+      "priority": "medium",
+      "keywords": ["array", "nested", "flatten"]
+    },
+    {
+      "rule": "Type casting converts values between types. Some casts lose information (123.45 to 123), others preserve it (123 to 123.0).",
+      "example": "Use cast() or type-specific functions like tointeger(), todecimal()",
+      "priority": "medium",
+      "keywords": ["cast", "type", "conversion", "tointeger", "todecimal"]
+    },
+    {
+      "rule": "Process variables automatically cast expression results to their defined type.",
+      "example": "Integer process variable receiving 123.45 behaves as though value passed through tointeger() first",
+      "priority": "medium",
+      "keywords": ["cast", "process", "variable", "type"]
+    },
+    {
+      "rule": "Records can cast to CDTs, maps, dictionaries, or text. Field names must match for CDT conversion.",
+      "example": "Cast record to CDT when passing to integrations expecting structured types",
+      "priority": "low",
+      "keywords": ["record", "cast", "cdt", "map", "type"]
+    },
+    {
+      "rule": "Partial evaluation uses underscores as placeholders for deferred arguments, enabling progressive function construction.",
+      "example": "concat(\"Hello \", _) creates partial function completed later",
+      "priority": "low",
+      "keywords": ["partial", "evaluation", "underscore", "defer"]
+    },
+    {
+      "rule": "Functions passed as Any Type parameters can execute indirectly, enabling dynamic dispatch patterns.",
+      "example": "Useful for reusable components like data grids that accept custom formatters",
+      "priority": "low",
+      "keywords": ["indirect", "evaluation", "dynamic", "any type"]
+    },
+    {
+      "rule": "In partial functions, arguments evaluate at construction time, not invocation time.",
+      "example": "concat(now(), _) captures timestamp when partial is created, not when completed",
+      "priority": "low",
+      "keywords": ["partial", "evaluation", "timing"]
+    }
+  ]
+}

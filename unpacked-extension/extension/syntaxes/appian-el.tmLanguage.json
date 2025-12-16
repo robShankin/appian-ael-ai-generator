@@ -1,0 +1,22 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Appian Expression Language",
+    "scopeName": "source.appian-el",
+    "fileTypes": ["ael", "expression", "sail"],
+    "patterns": [
+        {
+            "name": "comment.block.appian-el",
+            "begin": "/\\*",
+            "end": "\\*/"
+        },
+        {
+            "name": "support.function.appian-el",
+            "match": "\\b[a-z!A-Z][a-zA-Z0-9!]*\\b(?=\\()"
+        }
+    ],
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"]
+    ]
+}

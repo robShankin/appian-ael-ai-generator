@@ -1,0 +1,104 @@
+{
+    "name": "appian-ael-ai",
+    "displayName": "Appian Expression Language AI Code Generator",
+    "description": "AI-powered Appian Expression Language code generation for Cursor",
+    "publisher": "Appian Customer Success",
+    "version": "1.4.0",
+    "icon": "icon.png",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "appian",
+        "ael",
+        "sail",
+        "expression",
+        "ai",
+        "code generation",
+        "cursor"
+    ],
+    "main": "./lib/extension.js",
+    "activationEvents": [
+        "onCommand:appian-ael.generateCode",
+        "onCommand:appian-ael.generateFromSelection",
+        "onCommand:appian-ael.generateInline",
+        "onCommand:appian-ael.showReference",
+        "onLanguage:appian-el"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "appian-ael.generateCode",
+                "title": "Generate Appian Code",
+                "category": "Appian"
+            },
+            {
+                "command": "appian-ael.generateFromSelection",
+                "title": "Generate Appian Code from Selection",
+                "category": "Appian"
+            },
+            {
+                "command": "appian-ael.generateInline",
+                "title": "Generate Appian Code (Quick - Clipboard)",
+                "category": "Appian"
+            },
+            {
+                "command": "appian-ael.showReference",
+                "title": "Show Appian Function Reference",
+                "category": "Appian"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "appian-ael.generateCode",
+                "key": "ctrl+shift+a",
+                "mac": "cmd+shift+a",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "appian-ael.generateInline",
+                "key": "ctrl+alt+a",
+                "mac": "cmd+alt+a",
+                "when": "editorTextFocus"
+            }
+        ],
+        "languages": [
+            {
+                "id": "appian-el",
+                "aliases": ["Appian EL", "AEL", "SAIL"],
+                "extensions": [".ael", ".expression", ".sail"],
+                "configuration": "./language-configuration/language-configuration.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "appian-el",
+                "path": "./snippets/appian-el.json"
+            }
+        ],
+        "grammars": [                 
+            {
+                "language": "appian-el",
+                "scopeName": "source.appian-el",
+                "path": "./syntaxes/appian-el.tmLanguage.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "Appian Expression Language Custom",
+                "uiTheme": "vs-dark",
+                "path": "./themes/appian-dark-color-theme.json"
+            }
+        ]
+    },
+    "scripts": {
+        "package": "vsce package --no-dependencies"
+    },
+    "devDependencies": {},
+    "dependencies": {}
+}

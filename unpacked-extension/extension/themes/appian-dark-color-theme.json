@@ -1,0 +1,17 @@
+{
+    "name": "Appian Expression Language Custom Colors",
+    "tokenColors": [
+        {
+            "scope": "comment.block.appian-el",
+            "settings": {
+                "foreground": "#00ff00"  /* Bright Green for Comments */
+            }
+        },
+        {
+            "scope": "support.function.appian-el",
+            "settings": {
+                "foreground": "#569cd6"  /* Your Requested Dark Blue for Functions */
+            }
+        }
+    ]
+}

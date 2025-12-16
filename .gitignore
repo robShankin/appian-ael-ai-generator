@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+npm-debug.log*
+
+# Build outputs
+out/
+dist/
+*.vsix
+*.vsix.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Test files (optional - remove these lines if you want to include tests)
+test-*.js
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.001
+*.002
+*.003
+*.004
+*.005
+*.bak
