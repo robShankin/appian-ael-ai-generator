@@ -86,7 +86,7 @@ The extension ensures generated code:
 appian-ael-ai-generator/
 ├── README.md                          # You are here
 ├── QUICK_START.md                     # Build & installation guide
-├── VERSION_1.4.0_SUMMARY.md          # Latest version details
+├── VERSION_1.4.1_SUMMARY.md          # Latest version details
 │
 ├── unpacked-extension/
 │   └── extension/

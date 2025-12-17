@@ -437,7 +437,7 @@ Now that you have the extension working:
 ## Questions?
 
 - 📖 See [README.md](README.md) for project overview
-- 📝 See [VERSION_1.4.0_SUMMARY.md](VERSION_1.4.0_SUMMARY.md) for latest changes
+- 📝 See [VERSION_1.4.1_SUMMARY.md](VERSION_1.4.1_SUMMARY.md) for latest changes
 - 🐛 Found a bug? [Open an issue](https://github.com/robShankin/appian-ael-ai-generator/issues)
 - 💡 Have an idea? [Start a discussion](https://github.com/robShankin/appian-ael-ai-generator/discussions)
 

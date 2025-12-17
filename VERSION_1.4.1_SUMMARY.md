@@ -1,6 +1,12 @@
-# Appian AEL AI Extension - Version 1.4.0 Enhancement Summary
+# Appian AEL AI Extension - Version 1.4.1 Enhancement Summary
 
-## What's New in Version 1.4.0
+## What's New in Version 1.4.1
+
+### Bug Fix (v1.4.1)
+- 🐛 **Fixed autocomplete bug** for 5 functions: `now()`, `timezone()`, `timezoneid()`, `today()`, `infinity()`
+- 🔧 Corrected errant "1" prefix in function snippets (e.g., "1now()" → "now()")
+
+### Major Features (v1.4.0 Base)
 
 This version significantly enhances code generation quality by incorporating **contextual best practices and patterns** from official Appian documentation into the AI prompt generation system.
 
@@ -60,7 +66,7 @@ The best practices were extracted and curated from these official Appian 25.4 do
 ```bash
 # In VS Code/Cursor, open command palette (Cmd+Shift+P)
 # Select: Extensions: Install from VSIX
-# Navigate to: /Users/robert.shankin/codingRepo/CodeCompletion/unpacked-extension/extension/appian-ael-ai-1.4.0.vsix
+# Navigate to: /Users/robert.shankin/codingRepo/CodeCompletion/unpacked-extension/extension/appian-ael-ai-1.4.1.vsix
 ```
 
 ### Option 2: Rollback to 1.3.2 (If Needed)
@@ -90,7 +96,10 @@ All tests passed successfully with contextually appropriate best practices being
 ### Modified Files
 - `unpacked-extension/extension/src/promptBuilder.ts` - Enhanced with filtering logic (TypeScript source)
 - `unpacked-extension/extension/lib/promptBuilder.js` - Compiled JavaScript with enhancements
-- `unpacked-extension/extension/package.json` - Version bumped to 1.4.0
+- `unpacked-extension/extension/package.json` - Version bumped to 1.4.1
+- `unpacked-extension/extension/snippets/appian-el.json` - Fixed function autocomplete (v1.4.1)
+- `unpacked-extension/extension/appian-functions-complete.json` - Fixed function autocomplete (v1.4.1)
+- `unpacked-extension/extension/appian-functions-docs.json` - Fixed function examples (v1.4.1)
 
 ### Test Files Created
 - `test-prompt-generation.js` - Basic prompt generation tests
@@ -108,9 +117,9 @@ With this enhancement, AI-generated code should:
 
 ## Next Steps
 
-1. **Install version 1.4.0** using the VSIX file
+1. **Install version 1.4.1** using the VSIX file
 2. **Test with your typical Appian code generation tasks**
-3. **Compare results** with version 1.3.2 to see improvements
+3. **Verify autocomplete** for functions like `now()`, `today()`, etc.
 4. **Report any issues** - we can easily rollback if needed
 
 ## Maintenance
@@ -125,4 +134,4 @@ To update best practices in the future:
 
 **Built on:** December 16, 2025
 **Appian Version:** 25.4
-**Extension Version:** 1.4.0
+**Extension Version:** 1.4.1
