@@ -66,12 +66,12 @@ vsce package --no-dependencies
 **What happens:**
 - `vsce` reads the `package.json` file
 - Bundles all the code files (`lib/`, JSON files, snippets, etc.)
-- Creates a file called `appian-ael-ai-1.4.0.vsix`
+- Creates a file called `appian-ael-ai-1.4.1.vsix`
 - Takes ~5-10 seconds
 
 **You'll see:**
 ```
-✔ Packaged: /path/to/extension/appian-ael-ai-1.4.0.vsix (28 files, ~263KB)
+✔ Packaged: /path/to/extension/appian-ael-ai-1.4.1.vsix (28 files, ~263KB)
 ```
 
 ✅ **Success!** You now have a `.vsix` file - this is your extension installer.
@@ -83,7 +83,7 @@ vsce package --no-dependencies
 ### Method 1: Drag and Drop (Easiest)
 
 1. Open Cursor (or VS Code)
-2. Find the `appian-ael-ai-1.4.0.vsix` file in Finder/Explorer
+2. Find the `appian-ael-ai-1.4.1.vsix` file in Finder/Explorer
 3. **Drag it into the Cursor window**
 4. Click **"Install"** when prompted
 5. Done! ✅
@@ -93,7 +93,7 @@ vsce package --no-dependencies
 1. Open Cursor/VS Code
 2. Press **`Cmd+Shift+P`** (Mac) or **`Ctrl+Shift+P`** (Windows)
 3. Type: `Extensions: Install from VSIX`
-4. Navigate to and select `appian-ael-ai-1.4.0.vsix`
+4. Navigate to and select `appian-ael-ai-1.4.1.vsix`
 5. Click **"Install"**
 6. Done! ✅
 
@@ -133,21 +133,31 @@ Press **Enter**
 
 #### Step 3: Choose How to Use the Prompt
 
-You'll see three options:
+You'll see five options:
 
-**Option A: Copy to Clipboard** (Most common)
+**Option 1: Send to chat** (Fastest!)
+- Automatically copies prompt and opens chat
+- You just press Cmd+V and Enter
+- **Recommended for quickest workflow**
+
+**Option 2: Generate inline** (Most automated!)
+- Opens prompt in document and triggers Cmd+K automatically
+- You just press Enter
+- Code appears directly in the document
+
+**Option 3: Copy to Clipboard**
 - Copies the prompt
-- You paste it into Cursor's chat or inline editor
+- You manually paste into Cursor's chat or inline editor
 
-**Option B: Open in New File**
+**Option 4: Open in New File**
 - Opens a new editor tab with the prompt
 - Good for reviewing before using
 
-**Option C: Insert at Cursor**
+**Option 5: Insert at Cursor**
 - Pastes prompt directly where your cursor is
 - Quick for inline work
 
-Choose **"Copy to Clipboard"**
+Choose **"Send to chat"** or **"Generate inline"** for the fastest experience
 
 #### Step 4: Use with Cursor AI
 
@@ -387,7 +397,7 @@ appian-ael-ai-generator/
 │       │
 │       ├── package.json            ← Extension config (version, commands, etc.)
 │       │
-│       └── appian-ael-ai-1.4.0.vsix    ← The installer (after you build it)
+│       └── appian-ael-ai-1.4.1.vsix    ← The installer (after you build it)
 ```
 
 **To modify the extension:**

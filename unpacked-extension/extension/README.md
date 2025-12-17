@@ -2,7 +2,7 @@
 
 > AI-powered code generation for Appian developers using VS Code or Cursor IDE
 
-**Version:** 1.5.0
+**Version:** 1.4.1
 
 ## Features
 
@@ -55,19 +55,19 @@ This extension is distributed as source code. You need to build it before instal
    ```bash
    vsce package --no-dependencies
    ```
-3. This creates `appian-ael-ai-1.4.0.vsix`
+3. This creates `appian-ael-ai-1.4.1.vsix`
 
 ### Install the Extension
 
 **Method 1: Drag and Drop (Easiest)**
-1. Find the `appian-ael-ai-1.4.0.vsix` file
+1. Find the `appian-ael-ai-1.4.1.vsix` file
 2. Drag it into your VS Code/Cursor window
 3. Click "Install"
 
 **Method 2: Command Palette**
 1. Press `Cmd+Shift+P` (Mac) or `Ctrl+Shift+P` (Windows)
 2. Type: `Extensions: Install from VSIX`
-3. Select the `appian-ael-ai-1.4.0.vsix` file
+3. Select the `appian-ael-ai-1.4.1.vsix` file
 4. Click "Install"
 
 ### Verify Installation
@@ -283,11 +283,9 @@ The extension automatically activates for:
 
 ## Version History
 
-### 1.5.0 (Current)
-- 🚀 NEW: "Send to chat" option - Auto-opens chat with prompt ready to paste
-- ✨ NEW: "Generate inline" option - Auto-triggers Cmd+K for instant generation
-- 📈 5 workflow options now available (up from 3)
-- 🎯 Streamlined user experience with automated workflows
+### 1.4.1 (Current)
+- 🐛 Fixed autocomplete bug for 5 functions: now(), timezone(), timezoneid(), today(), infinity()
+- 🔧 Corrected errant "1" prefix in function snippets (e.g., "1now()" → "now()")
 
 ### 1.4.0
 - ✨ Added context-aware best practices from 9 Appian documentation pages

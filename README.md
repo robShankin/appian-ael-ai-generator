@@ -30,7 +30,12 @@ A VS Code/Cursor extension that helps you generate Appian Expression Language (A
    ✓ Critical AEL syntax rules
    ✓ Relevant best practices (performance, null handling, etc.)
    ✓ Top 15 most relevant function references
-3. Paste prompt into Cursor's AI (Cmd+K)
+3. Choose your preferred workflow:
+   • Send to chat - Auto-opens chat (just press Cmd+V)
+   • Generate inline - Auto-triggers Cmd+K (press Enter)
+   • Copy to clipboard - Manual paste workflow
+   • Open in new file - Review before generating
+   • Insert at cursor - Add to current document
 4. Get production-ready Appian code
 ```
 
@@ -111,7 +116,11 @@ appian-ael-ai-generator/
 
 ## Version History
 
-### v1.4.0 (Current)
+### v1.4.1 (Current)
+- 🐛 Fixed autocomplete bug for 5 functions: now(), timezone(), timezoneid(), today(), infinity()
+- 🔧 Corrected errant "1" prefix in function snippets (e.g., "1now()" → "now()")
+
+### v1.4.0
 - ✨ Added context-aware best practices from Appian documentation
 - 🎯 Dynamic filtering based on request keywords
 - 📝 Enhanced system instructions with explicit syntax rules

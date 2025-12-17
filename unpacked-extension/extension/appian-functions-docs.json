@@ -2654,9 +2654,9 @@
       "returnDescription": "No parameters.",
       "parameters": {},
       "examples": [
-        "1now()",
         "now()",
-        "1local(now(),\"IST\")"
+        "now()",
+        "local(now(),\"IST\")"
       ],
       "useCase": "",
       "relatedFunctions": [],
@@ -2794,7 +2794,7 @@
       "returnDescription": "No parameters.",
       "parameters": {},
       "examples": [
-        "1timezone()",
+        "timezone()",
         "timezone()"
       ],
       "useCase": "Returns the default offset in minutes from GMT, which is generally the process initiator's time zone.",
@@ -2809,7 +2809,7 @@
       "returnDescription": "No parameters.",
       "parameters": {},
       "examples": [
-        "1timezoneid()",
+        "timezoneid()",
         "timezoneid()"
       ],
       "useCase": "Expect differing results when the process takes the initiator's time zone versus the configured time zone. In reports, rules, and dashboards, the current user's time zone is returned.",
@@ -2824,9 +2824,9 @@
       "returnDescription": "No parameters.",
       "parameters": {},
       "examples": [
-        "1today()",
         "today()",
-        "1today()-5"
+        "today()",
+        "today()-5"
       ],
       "useCase": "",
       "relatedFunctions": [],
@@ -3352,9 +3352,9 @@
       "returnDescription": "Decimal",
       "parameters": {},
       "examples": [
-        "1infinity()",
         "infinity()",
-        "1infinity()*-1"
+        "infinity()",
+        "infinity()*-1"
       ],
       "useCase": "Represents a constant number that stands for positive infinity or a negative infinity if you negate the value.",
       "relatedFunctions": [],

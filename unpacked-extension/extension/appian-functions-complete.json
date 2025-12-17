@@ -1736,7 +1736,7 @@
             "now"
         ],
         "body": [
-            "1now(",
+            "now(",
             "  ${1:/* parameters */}",
             ")"
         ],
@@ -1803,7 +1803,7 @@
             "timezone"
         ],
         "body": [
-            "1timezone(",
+            "timezone(",
             "  ${1:/* parameters */}",
             ")"
         ],
@@ -1815,7 +1815,7 @@
             "timezoneid"
         ],
         "body": [
-            "1timezoneid(",
+            "timezoneid(",
             "  ${1:/* parameters */}",
             ")"
         ],
@@ -1827,7 +1827,7 @@
             "today"
         ],
         "body": [
-            "1today(",
+            "today(",
             "  ${1:/* parameters */}",
             ")"
         ],
@@ -2139,7 +2139,7 @@
             "infinity"
         ],
         "body": [
-            "1infinity(",
+            "infinity(",
             "  ${1:/* parameters */}",
             ")"
         ],
