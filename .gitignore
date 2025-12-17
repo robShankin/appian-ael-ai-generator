@@ -33,3 +33,6 @@ test-*.js
 *.004
 *.005
 *.bak
+
+# Script configuration (user-specific paths)
+scripts/config.json

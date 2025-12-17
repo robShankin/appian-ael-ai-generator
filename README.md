@@ -2,7 +2,7 @@
 
 > AI-powered code generation for Appian developers using VS Code or Cursor IDE
 
-[![Version](https://img.shields.io/badge/version-1.4.0-blue.svg)](https://github.com/robShankin/appian-ael-ai-generator)
+[![Version](https://img.shields.io/badge/version-1.4.1-blue.svg)](https://github.com/robShankin/appian-ael-ai-generator)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## What Is This?
