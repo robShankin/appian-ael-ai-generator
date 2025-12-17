@@ -80,6 +80,28 @@ The extension ensures generated code:
 - ✅ Uses appropriate local variable patterns
 - ✅ Avoids common anti-patterns
 
+## Data Sources
+
+This extension relies on comprehensive Appian documentation data extracted from official sources:
+
+### Function Reference Data
+- **Source**: [Appian Documentation Scraper](https://github.com/robShankin/appian-docs-scraper)
+- **What it provides**: All 713 Appian functions with signatures, parameters, examples, and use cases
+- **Generated files**:
+  - `appian-functions-complete.json` - VS Code snippet format
+  - `appian-functions-docs.json` - Enriched documentation with examples
+  - `appian-functions-reference.json` - Function signatures
+
+### Best Practices Data
+- **Source**: Manually curated from 9 official Appian 25.4 documentation pages
+- **What it provides**: Context-aware best practices for code generation
+- **Generated file**: `appian-best-practices.json`
+
+### Updating the Data
+For instructions on updating function data when new Appian versions are released, see:
+- **[DATA_UPDATE_PROCESS.md](docs/DATA_UPDATE_PROCESS.md)** - Complete update workflow
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Contributing guidelines
+
 ## Project Structure
 
 ```

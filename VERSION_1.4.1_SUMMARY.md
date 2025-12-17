@@ -88,6 +88,14 @@ The enhancement was tested with 6 different request types:
 
 All tests passed successfully with contextually appropriate best practices being included.
 
+## Data Sources
+
+### Function Reference Data
+All function data (713 Appian functions) is sourced from the [Appian Documentation Scraper](https://github.com/robShankin/appian-docs-scraper) project, which extracts comprehensive function information from official Appian 25.4 documentation.
+
+### Best Practices
+Best practices were manually curated from 9 official Appian documentation pages covering syntax rules, performance optimization, null handling, local variables, and advanced patterns.
+
 ## Files Modified
 
 ### New Files
